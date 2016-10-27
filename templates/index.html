@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '128209400984068',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+
+</script>
+  <!--
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '183335688784483',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+    FB.getLoginStatus(function(response){
+    	if(response.status === 'connected'){
+    		document.getElementById('status').innerHTML = 'we are connected';
+    	} else if (response.status === 'not_authorized'){
+    		document.getElementById('status').innerHTML = 'we are not logged in ';
+    	} else {
+    		document.getElementById('status').innerHTML = 'you are not loged into facebook';
+    	}
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+  function login() {
+  	FB.login(function(response){
+  		if(response.status === 'connected'){
+    		document.getElementById('status').innerHTML = 'we are connected';
+    	} else if (response.status === 'not_authorized'){
+    		document.getElementById('status').innerHTML = 'we are not logged in ';
+    	} else {
+    		document.getElementById('status').innerHTML = 'you are not loged into facebook';
+    	}
+  	});
+  };
+</script>
+
+-->
+</body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=128209400984068";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+<br><br><br><br><br>
+
+<div class="fb-login-button"  onlogin="checkLoginState();" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>
+
+<br><br><br><br><br>
+<!--
+<div id='status'></div>
+<button onclick="login()">login</button>
+-->
+</html>
