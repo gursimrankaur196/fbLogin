@@ -1,4 +1,4 @@
-#!/home/gursimran/Desktop/project/env/bin/python
+#!/Users/chetanya/Desktop/fbLogin/env/bin/python
 
 import sys
 import getopt
